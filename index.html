@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>De Mads – Muziek &amp; Danscentrum Waalwijk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Inline critical style: prevent FOUC on preloader only -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --clr-bg: #0a0a0b; --clr-surface: #111113; --clr-card: #17171a;
+      --clr-border: rgba(255,255,255,0.08); --clr-accent: #e8c44a;
+      --clr-accent2: #c0392b; --clr-text: #e8e8ec;
+      --clr-muted: rgba(232,232,236,0.55); --nav-h: 68px;
+      --radius: 12px; --ease: cubic-bezier(0.16,1,0.3,1);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--clr-bg); color: var(--clr-text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    #preloader {
+      position: fixed; inset: 0; background: var(--clr-bg);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999; transition: opacity 0.6s var(--ease), visibility 0.6s;
+    }
+    #preloader.hidden { opacity: 0; visibility: hidden; }
+    .preloader-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 700;
+      color: var(--clr-accent); letter-spacing: -0.03em;
+      animation: pulse 1.2s ease-in-out infinite alternate;
+    }
+    @keyframes pulse { to { opacity: 0.3; } }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader" role="status" aria-label="Laden…">
+    <span class="preloader-logo">De Mads</span>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="main-nav" aria-label="Hoofdnavigatie">
+    <a href="#hero" class="nav-logo">De Mads</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#services">Diensten</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#repeteren">Repeteren</a></li>
+      <li><a href="#muziekcafe">Muziekcafé</a></li>
+      <li><a href="#verhuur">Verhuur</a></li>
+      <li><a href="#optreden">Optreden</a></li>
+      <li><a href="#feest">Feestje</a></li>
+      <li><a href="#facebook">Nieuws</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu openen/sluiten" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <p class="hero-tag">Muziek &amp; Danscentrum · Waalwijk</p>
+    <h1 class="hero-title" id="hero-heading">
+      Waar muziek<br /><em>leeft.</em>
+    </h1>
+    <p class="hero-sub">
+      De Mads is het bruisende muziek- en danscentrum in De Langstraat. Van professionele studio-opnames en repeteren tot live optreden, clinics en een gezellig muziekcafé — alles voor de actieve muziekliefhebber.
+    </p>
+    <div class="hero-actions">
+      <a href="#services" class="btn btn-primary">Ontdek De Mads</a>
+      <a href="#contact" class="btn btn-outline">Neem contact op</a>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- Services Overview -->
+  <section id="services" aria-labelledby="services-heading">
+    <p class="section-label reveal">Wat we bieden</p>
+    <h2 class="section-title reveal" id="services-heading">Alles voor de muzikant</h2>
+    <p class="section-body reveal">In een moderne omgeving met knusse sfeer kan zowel de beginnende als gevorderde muzikant terecht voor vrijwel alles op het gebied van livemuziek.</p>
+
+    <div class="services-grid" role="list">
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🎙️</span>
+        <h3>Studio</h3>
+        <p>Ultramoderne opnamestudio voor professionele CD-producties en demo-opnames. Uitgerust met ProTools en high-end apparatuur.</p>
+        <a href="#studio" class="service-tag">Meer info →</a>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🥁</span>
+        <h3>Repeteren</h3>
+        <p>Drie moderne, volledig ingerichte repetitieruimtes met geklimatiseerde omgeving voor optimaal repeteercomfort.</p>
+        <a href="#repeteren" class="service-tag">Meer info →</a>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🍺</span>
+        <h3>Muziekcafé</h3>
+        <p>Gezellig bruincafé met podium, jamsessies en clinics. De perfecte plek om andere muzikanten te ontmoeten.</p>
+        <a href="#muziekcafe" class="service-tag">Meer info →</a>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🔊</span>
+        <h3>P.A. Verhuur</h3>
+        <p>Van 2×300 Watt voor een kleine ruimte tot 2×18.000 Watt voor een openlucht festival. Kwaliteit voor elk budget.</p>
+        <a href="#verhuur" class="service-tag">Meer info →</a>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🎸</span>
+        <h3>Optreden &amp; Clinics</h3>
+        <p>Regelmatig gelegenheid voor try-outs en clinics in het muziekcafé. Open voor alle muziekstijlen.</p>
+        <a href="#optreden" class="service-tag">Meer info →</a>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🎉</span>
+        <h3>Feest &amp; Verhuur zalen</h3>
+        <p>Verjaardag, bruiloft, jubileum of receptie — wij verzorgen uw volledige feest met of zonder catering.</p>
+        <a href="#feest" class="service-tag">Meer info →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Studio -->
+  <section id="studio" aria-labelledby="studio-heading">
+    <p class="section-label reveal">Opnemen</p>
+    <h2 class="section-title reveal" id="studio-heading">De Studio</h2>
+    <div class="studio-layout">
+      <div>
+        <p class="section-body reveal">De Mads beschikt over een veelzijdige, ultramoderne studio. Ingericht voor professionele CD-producties en demo-opnames. Het hart van de studio wordt gevormd door <strong>ProTools</strong>. Het niveau van grote Nederlandse studio's wordt geëvenaard of zelfs overtroffen.</p>
+
+        <div class="studio-features">
+          <div class="feature-block reveal">
+            <h4>M.I. Sound Recordings</h4>
+            <p>Label voor professioneel werk. Volledig op maat — pre- en postmix tot een complete gemasterde CD.</p>
+          </div>
+          <div class="feature-block reveal">
+            <h4>De Mads Recordings</h4>
+            <p>Laagdrempelig label voor demo-opnames en eerste CD-releases voor kleine oplagen.</p>
+          </div>
+          <div class="feature-block reveal">
+            <h4>Live Opnames</h4>
+            <p>Uniek: opnames van live-concerten in de grote zaal. Uiterst laagdrempelig een kwalitatieve live-CD produceren.</p>
+          </div>
+          <div class="feature-block reveal">
+            <h4>Speciale Akoestiek</h4>
+            <p>Studio ontworpen door een acousticus. Plafond en wanden van natuurlijke materialen met verschuifbare wandbekleding.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Tarieven Studio</h3>
+        <div class="price-row">
+          <span class="item">Studiohuur (opnames / mixen / masteren)</span>
+          <span class="amount">€ 47,50 / uur</span>
+        </div>
+        <div class="price-row">
+          <span class="item">Studiohuur dagtarief</span>
+          <span class="amount">€ 400 / dag</span>
+        </div>
+        <div class="price-row">
+          <span class="item">Live opnames (studio + P.A. in de zaal)</span>
+          <span class="amount">P.o.a.</span>
+        </div>
+        <div class="price-row">
+          <span class="item">Mixen live-opname (min. 2 dagen)</span>
+          <span class="amount">P.o.a. / dag</span>
+        </div>
+        <div class="price-row">
+          <span class="item">CD branden – tussenmix</span>
+          <span class="amount">€ 5 / CD</span>
+        </div>
+        <div class="price-row">
+          <span class="item">CD branden – master CD</span>
+          <span class="amount">€ 10 / CD</span>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;width:100%;text-align:center;">Boek de studio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repeteren -->
+  <section id="repeteren" aria-labelledby="repeteren-heading">
+    <p class="section-label reveal">Oefenen</p>
+    <h2 class="section-title reveal" id="repeteren-heading">Repetitieruimtes</h2>
+    <p class="section-body reveal">Drie moderne, volledig ingerichte repetitieruimtes. Geklimatiseerd voor optimaal repeteercomfort. En het muziekcafé maakt het ook nog eens gezellig!</p>
+
+    <div class="rooms-grid">
+      <div class="room-card reveal">
+        <h3>Ruimte A</h3>
+        <ul>
+          <li>24 m²</li>
+          <li>Zangset 2×250 W met 8-kanaals mengpaneel</li>
+          <li>3 microfoons met statief</li>
+          <li>CD-speler</li>
+          <li>Drumstel Pearl</li>
+          <li>Basversterker Hartke</li>
+          <li>2× gitaarversterker Marshall</li>
+        </ul>
+      </div>
+      <div class="room-card reveal">
+        <h3>Ruimte B &amp; C</h3>
+        <ul>
+          <li>Volledig ingerichte repetitieruimtes</li>
+          <li>Sennheiser microfoons</li>
+          <li>K&amp;M statieven</li>
+          <li>LEM zangset</li>
+          <li>Bekkens optioneel te huur</li>
+          <li>Drummer brengt eigen bekkens</li>
+        </ul>
+      </div>
+      <div class="room-card reveal">
+        <h3>Tarieven</h3>
+        <ul>
+          <li>1 blok vaste dag per week — <strong style="color:var(--clr-accent)">€ 85 / maand</strong></li>
+          <li>Volledige avond vaste dag — <strong style="color:var(--clr-accent)">€ 115 / maand</strong></li>
+          <li>1 blok los — <strong style="color:var(--clr-accent)">€ 31,50</strong></li>
+          <li>Losse repetitie overdag — <strong style="color:var(--clr-accent)">€ 12,50 / uur</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MuziekCafé -->
+  <section id="muziekcafe" aria-labelledby="cafe-heading">
+    <p class="section-label reveal">Ontmoeten</p>
+    <h2 class="section-title reveal" id="cafe-heading">Het MuziekCafé</h2>
+    <div class="cafe-layout">
+      <div>
+        <p class="section-body reveal">Het muziekcafé is een gezellig café, ingericht als bruincafé en voor iedereen toegankelijk. Op de achtergrond is meestal Rock of Blues te horen. Op het podium worden regelmatig jamsessies, clinics, demonstraties en try-outs georganiseerd.</p>
+        <p class="section-body reveal" style="margin-top:1rem;">Bands die zichzelf willen aanmelden voor een optreden zijn van harte welkom — zie de sectie <a href="#optreden" style="color:var(--clr-accent)">Optreden</a>.</p>
+      </div>
+      <div class="reveal">
+        <table class="hours-table" aria-label="Openingstijden muziekcafé">
+          <thead>
+            <tr><th>Dag</th><th>Openingstijden</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Maandag</td><td>13:30 – 01:30</td></tr>
+            <tr><td>Dinsdag</td><td>13:30 – 01:30</td></tr>
+            <tr><td>Woensdag</td><td>13:30 – 01:30</td></tr>
+            <tr><td>Donderdag</td><td>13:30 – 01:30</td></tr>
+            <tr><td>Vrijdag</td><td>13:30 – 03:00</td></tr>
+            <tr><td>Zaterdag</td><td>10:00 – 03:00</td></tr>
+            <tr><td>Zondag</td><td>10:00 – 01:30</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verhuur -->
+  <section id="verhuur" aria-labelledby="verhuur-heading">
+    <p class="section-label reveal">M.I. Sound</p>
+    <h2 class="section-title reveal" id="verhuur-heading">P.A. Verhuur</h2>
+    <p class="section-body reveal">Onder de naam M.I. Sound verhuurt De Mads P.A. apparatuur en backline voor alle soorten evenementen — van een intieme huiskamerpresentatie tot een groot openlucht festival. Kwaliteit voor elk budget, met ervaren technici.</p>
+
+    <div class="pa-grid">
+      <div class="pa-card reveal">
+        <p class="watt">2×300 Watt</p>
+        <h3>Disco-set</h3>
+        <ul>
+          <li>Mixer + 1× microfoon</li>
+          <li>2× LEM K-3 Topkasten</li>
+          <li>2× CD-speler</li>
+          <li>Bediening optioneel (+€100)</li>
+        </ul>
+        <p class="pa-price">€ 175</p>
+      </div>
+      <div class="pa-card reveal">
+        <p class="watt">2×600 Watt</p>
+        <h3>Mini-P.A. 1</h3>
+        <ul>
+          <li>Allen &amp; Heath ZED 12 FX</li>
+          <li>2× LEM K-6 Topkasten</li>
+          <li>2× Monitor</li>
+          <li>Microfoons voor set</li>
+        </ul>
+        <p class="pa-price">€ 275</p>
+      </div>
+      <div class="pa-card reveal">
+        <p class="watt">2×2.350 Watt · C-set</p>
+        <h3>P.A. Set 1</h3>
+        <ul>
+          <li>Allen &amp; Heath QU 16</li>
+          <li>2× 15/2″ Topkasten</li>
+          <li>2× 18″ Baskasten</li>
+          <li>4× Monitor · Bediening incl.</li>
+        </ul>
+        <p class="pa-price">€ 425</p>
+      </div>
+      <div class="pa-card reveal">
+        <p class="watt">2×4.550 Watt · B-set</p>
+        <h3>P.A. Set 2</h3>
+        <ul>
+          <li>Allen &amp; Heath iLive T80</li>
+          <li>4× 15/2″ Topkasten</li>
+          <li>2× 2×18″ Baskasten</li>
+          <li>4× Monitor · Bediening incl.</li>
+        </ul>
+        <p class="pa-price">€ 550</p>
+      </div>
+      <div class="pa-card reveal">
+        <p class="watt">2×9.000 Watt · A-set</p>
+        <h3>P.A. Set 2 Dubbel</h3>
+        <ul>
+          <li>Allen &amp; Heath iLive T80</li>
+          <li>4× 2×12″+2″ Topkasten</li>
+          <li>4× 2×18″ Baskasten</li>
+          <li>Bediening incl.</li>
+        </ul>
+        <p class="pa-price">€ 800</p>
+      </div>
+      <div class="pa-card reveal">
+        <p class="watt">2×18.000 Watt · A-set</p>
+        <h3>Line Array Festival</h3>
+        <ul>
+          <li>8× 12/2 Line Array Toppen</li>
+          <li>8× 2×18 Baskasten</li>
+          <li>12× Monitor</li>
+          <li>Bediening incl.</li>
+        </ul>
+        <p class="pa-price">€ 1.500</p>
+      </div>
+    </div>
+    <p style="margin-top:2rem;color:var(--clr-muted);font-size:0.9rem;">Reiskosten: € 0,50 per km. Grotere installaties of meerdere dagen: op aanvraag.</p>
+  </section>
+
+  <!-- Optreden / Clinics -->
+  <section id="optreden" aria-labelledby="optreden-heading">
+    <p class="section-label reveal">Podium</p>
+    <h2 class="section-title reveal" id="optreden-heading">Optreden &amp; Clinics</h2>
+    <p class="section-body reveal">Al vele bands gingen je voor bij De Mads. Of je nu een try-out wilt spelen of een clinic wilt bijwonen van een bekende muzikant — bij De Mads is het mogelijk.</p>
+
+    <div class="optreden-cards">
+      <div class="optreden-card reveal">
+        <span class="icon" aria-hidden="true">🎤</span>
+        <h3>Try-outs</h3>
+        <p>Regelmatig gelegenheid om op te treden op het podium in het muziekcafé. Meld je band aan!</p>
+      </div>
+      <div class="optreden-card reveal">
+        <span class="icon" aria-hidden="true">🎓</span>
+        <h3>Clinics</h3>
+        <p>Diverse beroemde muzikanten hebben al clinics gegeven bij De Mads voor geïnteresseerde muzikanten uit de regio.</p>
+      </div>
+      <div class="optreden-card reveal">
+        <span class="icon" aria-hidden="true">🎵</span>
+        <h3>Alle stijlen</h3>
+        <p>Van covers tot eigen werk, van country tot hardrock — wij staan open voor alle soorten muziek.</p>
+      </div>
+    </div>
+    <div style="margin-top:2.5rem;" class="reveal">
+      <a href="#contact" class="btn btn-primary">Aanmelden voor optreden</a>
+    </div>
+  </section>
+
+  <!-- Feest -->
+  <section id="feest" aria-labelledby="feest-heading">
+    <p class="section-label reveal">Evenementen</p>
+    <h2 class="section-title reveal" id="feest-heading">Feestje bij De Mads?</h2>
+    <p class="section-body reveal">Informeer naar de mogelijkheden. Wij verzorgen uw volledige feest met of zonder catering.</p>
+
+    <div class="feest-list reveal">
+      <div class="feest-item"><span class="bullet">♪</span> Verjaardag in het muziekcafé</div>
+      <div class="feest-item"><span class="bullet">♪</span> Bruiloft in de grote zaal</div>
+      <div class="feest-item"><span class="bullet">♪</span> Jubileum</div>
+      <div class="feest-item"><span class="bullet">♪</span> Receptie</div>
+      <div class="feest-item"><span class="bullet">♪</span> Koffietafel</div>
+      <div class="feest-item"><span class="bullet">♪</span> Op maat georganiseerd</div>
+    </div>
+    <div style="margin-top:2.5rem;" class="reveal">
+      <a href="#contact" class="btn btn-primary">Informeer naar mogelijkheden</a>
+    </div>
+  </section>
+
+  <!-- Facebook Posts -->
+  <section id="facebook" aria-labelledby="facebook-heading">
+    <p class="section-label reveal">Sociaal</p>
+    <h2 class="section-title reveal" id="facebook-heading">Laatste nieuws</h2>
+
+    <div class="fb-section-inner">
+      <!-- Facebook Page Plugin – shows latest posts (timeline tab) -->
+      <div class="fb-embed-wrapper reveal" id="fb-embed-wrapper">
+        <div class="fb-loading" id="fb-loading">Berichten laden…</div>
+        <div
+          class="fb-page"
+          data-href="https://www.facebook.com/DeMadsWaalwijk/"
+          data-tabs="timeline"
+          data-width="500"
+          data-height="700"
+          data-small-header="true"
+          data-adapt-container-width="true"
+          data-hide-cover="false"
+          data-show-facepile="false"
+          style="display:none"
+        ></div>
+      </div>
+
+      <div class="fb-info-block reveal">
+        <div>
+          <p class="section-label" style="margin-bottom:0.5rem">Facebook</p>
+          <p style="color:var(--clr-muted);font-size:1rem;line-height:1.75;max-width:42ch">
+            Volg De Mads op Facebook voor de laatste updates over optredens, jamsessies, clinics en andere evenementen in ons muziek- en danscentrum.
+          </p>
+        </div>
+        <a
+          href="https://www.facebook.com/DeMadsWaalwijk/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fb-follow-btn"
+          aria-label="Volg De Mads op Facebook (opent in nieuw tabblad)"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+          </svg>
+          Volg ons op Facebook
+        </a>
+        <div>
+          <p class="section-label" style="margin-bottom:0.75rem">Agenda</p>
+          <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.7;max-width:42ch">
+            Bekijk alle aankomende evenementen, try-outs en jamsessies via onze Facebook-pagina.
+          </p>
+          <a
+            href="https://www.facebook.com/DeMadsWaalwijk/events/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline"
+            style="margin-top:1rem;display:inline-block"
+          >Bekijk alle evenementen →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <p class="section-label reveal">Bereikbaarheid</p>
+    <h2 class="section-title reveal" id="contact-heading">Contact</h2>
+    <p class="section-body reveal">Contact opnemen met De Mads? Bekijk hieronder de mogelijkheden.</p>
+
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="contact-row reveal">
+          <span class="label">Adres</span>
+          <span>Grotestraat 407<br />5142 CB Waalwijk</span>
+        </div>
+        <div class="contact-row reveal">
+          <span class="label">Telefoon</span>
+          <a href="tel:0416650184">0416-650184</a>
+        </div>
+        <div class="contact-row reveal">
+          <span class="label">E-mail</span>
+          <a href="mailto:info@demads.nl">info@demads.nl</a>
+        </div>
+        <div class="contact-row reveal">
+          <span class="label">Openingstijden café</span>
+          <span>Ma–Do: 13:30–01:30 · Vr: 13:30–03:00<br />Za: 10:00–03:00 · Zo: 10:00–01:30</span>
+        </div>
+        <div class="contact-row reveal">
+          <span class="label">Socials</span>
+          <span>
+            <a href="https://nl-nl.facebook.com/DeMadsWaalwijk/" target="_blank" rel="noopener noreferrer" style="color:var(--clr-accent)">Facebook</a>
+            &nbsp;·&nbsp;
+            <a href="https://www.youtube.com/user/demadswaalwijk/" target="_blank" rel="noopener noreferrer" style="color:var(--clr-accent)">YouTube</a>
+          </span>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-group">
+          <label for="name">Naam</label>
+          <input type="text" id="name" name="name" placeholder="Uw naam" required autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mailadres</label>
+          <input type="email" id="email" name="email" placeholder="uw@email.nl" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="subject">Onderwerp</label>
+          <input type="text" id="subject" name="subject" placeholder="Bijv. Studioboeking, Verhuur, ..." />
+        </div>
+        <div class="form-group">
+          <label for="message">Bericht</label>
+          <textarea id="message" name="message" placeholder="Uw bericht…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Verzenden</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="logo-text">De Mads</p>
+        <p>Muziek &amp; Danscentrum<br />Waalwijk · De Langstraat</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigatie">
+        <div class="footer-col">
+          <h4>Diensten</h4>
+          <a href="#studio">Studio</a>
+          <a href="#repeteren">Repeteren</a>
+          <a href="#verhuur">P.A. Verhuur</a>
+          <a href="#optreden">Optreden</a>
+        </div>
+        <div class="footer-col">
+          <h4>Bezoeken</h4>
+          <a href="#muziekcafe">MuziekCafé</a>
+          <a href="#feest">Feestje</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Partners</h4>
+          <a href="http://www.musicscool.nl/" target="_blank" rel="noopener noreferrer">Music'scool</a>
+          <a href="http://www.edenanjo.nl/" target="_blank" rel="noopener noreferrer">Dansles Eden &amp; Jo</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> De Mads · Grotestraat 407, 5142 CB Waalwijk</span>
+      <div class="social-links">
+        <a href="https://nl-nl.facebook.com/DeMadsWaalwijk/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://www.youtube.com/user/demadswaalwijk/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Facebook SDK root node -->
+  <div id="fb-root"></div>
+
+  <!-- Site JavaScript -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
