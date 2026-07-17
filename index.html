@@ -3,40 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="De Mads in Waalwijk: studio-opnames, repetitieruimtes, muziekcafe, optredens en P.A. verhuur op een plek." />
+  <meta name="theme-color" content="#152224" />
   <title>De Mads – Muziek &amp; Danscentrum Waalwijk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- Inline critical style: prevent FOUC on preloader only -->
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --clr-bg: #0a0a0b; --clr-surface: #111113; --clr-card: #17171a;
-      --clr-border: rgba(255,255,255,0.08); --clr-accent: #e8c44a;
-      --clr-accent2: #c0392b; --clr-text: #e8e8ec;
-      --clr-muted: rgba(232,232,236,0.55); --nav-h: 68px;
-      --radius: 12px; --ease: cubic-bezier(0.16,1,0.3,1);
-    }
     html { scroll-behavior: smooth; }
-    body { background: var(--clr-bg); color: var(--clr-text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    body { background: #0f1718; color: #f3f6f4; font-family: 'Barlow', sans-serif; overflow-x: hidden; }
     #preloader {
-      position: fixed; inset: 0; background: var(--clr-bg);
+      position: fixed; inset: 0; background: #0f1718;
       display: flex; align-items: center; justify-content: center;
-      z-index: 9999; transition: opacity 0.6s var(--ease), visibility 0.6s;
+      z-index: 9999; transition: opacity 0.6s ease, visibility 0.6s;
     }
     #preloader.hidden { opacity: 0; visibility: hidden; }
     .preloader-logo {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 700;
-      color: var(--clr-accent); letter-spacing: -0.03em;
+      letter-spacing: 0.04em;
+      color: #ffb703;
       animation: pulse 1.2s ease-in-out infinite alternate;
     }
     @keyframes pulse { to { opacity: 0.3; } }
   </style>
 </head>
 <body>
+
+  <a href="#services" class="skip-link">Direct naar inhoud</a>
 
   <!-- Preloader -->
   <div id="preloader" role="status" aria-label="Laden…">
@@ -46,6 +44,23 @@
   <!-- Navigation -->
   <nav id="main-nav" aria-label="Hoofdnavigatie">
     <a href="#hero" class="nav-logo">De Mads</a>
+    <div class="nav-social" aria-label="Social secties">
+      <a href="#facebook" class="nav-icon-link" aria-label="Ga naar Facebook sectie">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+        </svg>
+      </a>
+      <a href="#instagram" class="nav-icon-link" aria-label="Ga naar Instagram sectie">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5zm8.9 1.45a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"/>
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/user/demadswaalwijk/" target="_blank" rel="noopener noreferrer" class="nav-icon-link" aria-label="Ga naar YouTube kanaal (opent in nieuw tabblad)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.5 7.2a3 3 0 0 0-2.1-2.1C19.4 4.5 12 4.5 12 4.5s-7.4 0-9.4.6A3 3 0 0 0 .5 7.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c2 .6 9.4.6 9.4.6s7.4 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-4.8zM9.6 15.2V8.8l5.8 3.2-5.8 3.2z"/>
+        </svg>
+      </a>
+    </div>
     <ul class="nav-links" id="nav-links">
       <li><a href="#services">Diensten</a></li>
       <li><a href="#studio">Studio</a></li>
@@ -57,7 +72,7 @@
       <li><a href="#facebook">Nieuws</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
-    <button class="nav-burger" id="nav-burger" aria-label="Menu openen/sluiten" aria-expanded="false">
+    <button class="nav-burger" id="nav-burger" aria-controls="nav-links" aria-label="Menu openen/sluiten" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -67,16 +82,40 @@
     <div class="hero-bg" aria-hidden="true"></div>
     <p class="hero-tag">Muziek &amp; Danscentrum · Waalwijk</p>
     <h1 class="hero-title" id="hero-heading">
-      Waar muziek<br /><em>leeft.</em>
+      Alles voor je band,<br /><em>onder een dak.</em>
     </h1>
     <p class="hero-sub">
-      De Mads is het bruisende muziek- en danscentrum in De Langstraat. Van professionele studio-opnames en repeteren tot live optreden, clinics en een gezellig muziekcafé — alles voor de actieve muziekliefhebber.
+      Plan vandaag nog je repetitie, studio-opname of optreden bij De Mads. Je krijgt professionele faciliteiten, een sfeervol muziekcafe en een team dat met je meedenkt.
     </p>
     <div class="hero-actions">
-      <a href="#services" class="btn btn-primary">Ontdek De Mads</a>
-      <a href="#contact" class="btn btn-outline">Neem contact op</a>
+      <a href="#contact" class="btn btn-primary">Plan je bezoek</a>
+      <a href="#studio" class="btn btn-outline">Bekijk studio details</a>
+      <a href="tel:0416650184" class="btn btn-ghost">Bel direct: 0416-650184</a>
+    </div>
+    <div class="hero-facts" aria-label="Belangrijkste voordelen">
+      <div class="hero-fact"><span>7 dagen</span> open muziekcafe</div>
+      <div class="hero-fact"><span>3 ruimtes</span> voor repeteren</div>
+      <div class="hero-fact"><span>Van demo tot festival</span> studio en P.A.</div>
     </div>
     <div class="hero-scroll-hint" aria-hidden="true">Scroll</div>
+  </section>
+
+  <section class="quick-contact" aria-label="Snelle acties">
+    <p class="quick-contact-title">Snel geregeld</p>
+    <div class="quick-contact-grid">
+      <a href="tel:0416650184" class="quick-contact-item">
+        <span class="quick-label">Bel ons</span>
+        <strong>0416-650184</strong>
+      </a>
+      <a href="mailto:info@demads.nl" class="quick-contact-item">
+        <span class="quick-label">Mail ons</span>
+        <strong>info@demads.nl</strong>
+      </a>
+      <a href="#contact" class="quick-contact-item">
+        <span class="quick-label">Direct aanvragen</span>
+        <strong>Contactformulier invullen</strong>
+      </a>
+    </div>
   </section>
 
   <!-- Services Overview -->
@@ -154,32 +193,14 @@
       </div>
 
       <div class="price-card reveal">
-        <h3>Tarieven Studio</h3>
+        <h3>Studio aanvragen</h3>
         <div class="price-row">
-          <span class="item">Studiohuur (opnames / mixen / masteren)</span>
-          <span class="amount">€ 47,50 / uur</span>
+          <span class="item">Opnames, mixen, masteren en live registraties beschikbaar.</span>
         </div>
         <div class="price-row">
-          <span class="item">Studiohuur dagtarief</span>
-          <span class="amount">€ 400 / dag</span>
+          <span class="item">Neem contact op voor beschikbaarheid en mogelijkheden.</span>
         </div>
-        <div class="price-row">
-          <span class="item">Live opnames (studio + P.A. in de zaal)</span>
-          <span class="amount">P.o.a.</span>
-        </div>
-        <div class="price-row">
-          <span class="item">Mixen live-opname (min. 2 dagen)</span>
-          <span class="amount">P.o.a. / dag</span>
-        </div>
-        <div class="price-row">
-          <span class="item">CD branden – tussenmix</span>
-          <span class="amount">€ 5 / CD</span>
-        </div>
-        <div class="price-row">
-          <span class="item">CD branden – master CD</span>
-          <span class="amount">€ 10 / CD</span>
-        </div>
-        <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;width:100%;text-align:center;">Boek de studio</a>
+        <a href="#contact" class="btn btn-primary" style="margin-top:1.5rem;width:100%;text-align:center;">Vraag studio info aan</a>
       </div>
     </div>
   </section>
@@ -204,7 +225,7 @@
         </ul>
       </div>
       <div class="room-card reveal">
-        <h3>Ruimte B &amp; C</h3>
+        <h3>Ruimte B</h3>
         <ul>
           <li>Volledig ingerichte repetitieruimtes</li>
           <li>Sennheiser microfoons</li>
@@ -215,12 +236,25 @@
         </ul>
       </div>
       <div class="room-card reveal">
-        <h3>Tarieven</h3>
+        <h3>Ruimte C</h3>
         <ul>
-          <li>1 blok vaste dag per week — <strong style="color:var(--clr-accent)">€ 85 / maand</strong></li>
-          <li>Volledige avond vaste dag — <strong style="color:var(--clr-accent)">€ 115 / maand</strong></li>
-          <li>1 blok los — <strong style="color:var(--clr-accent)">€ 31,50</strong></li>
-          <li>Losse repetitie overdag — <strong style="color:var(--clr-accent)">€ 12,50 / uur</strong></li>
+          <li>Volledig ingerichte repetitieruimtes</li>
+          <li>Sennheiser microfoons</li>
+          <li>K&amp;M statieven</li>
+          <li>LEM zangset</li>
+          <li>Bekkens optioneel te huur</li>
+          <li>Drummer brengt eigen bekkens</li>
+        </ul>
+      </div>
+      <div class="room-card reveal">
+        <h3>Ruimte D</h3>
+        <ul>
+          <li>Volledig ingerichte repetitieruimtes</li>
+          <li>Sennheiser microfoons</li>
+          <li>K&amp;M statieven</li>
+          <li>LEM zangset</li>
+          <li>Bekkens optioneel te huur</li>
+          <li>Drummer brengt eigen bekkens</li>
         </ul>
       </div>
     </div>
@@ -258,7 +292,7 @@
   <section id="verhuur" aria-labelledby="verhuur-heading">
     <p class="section-label reveal">M.I. Sound</p>
     <h2 class="section-title reveal" id="verhuur-heading">P.A. Verhuur</h2>
-    <p class="section-body reveal">Onder de naam M.I. Sound verhuurt De Mads P.A. apparatuur en backline voor alle soorten evenementen — van een intieme huiskamerpresentatie tot een groot openlucht festival. Kwaliteit voor elk budget, met ervaren technici.</p>
+    <p class="section-body reveal">Onder de naam M.I. Sound verhuurt De Mads P.A. apparatuur en backline voor alle soorten evenementen — van een intieme huiskamerpresentatie tot een groot openlucht festival. Met ervaren technici en professionele ondersteuning.</p>
 
     <div class="pa-grid">
       <div class="pa-card reveal">
@@ -268,9 +302,9 @@
           <li>Mixer + 1× microfoon</li>
           <li>2× LEM K-3 Topkasten</li>
           <li>2× CD-speler</li>
-          <li>Bediening optioneel (+€100)</li>
+          <li>Bediening optioneel op aanvraag</li>
         </ul>
-        <p class="pa-price">€ 175</p>
+        <p class="pa-price">Op aanvraag</p>
       </div>
       <div class="pa-card reveal">
         <p class="watt">2×600 Watt</p>
@@ -281,7 +315,7 @@
           <li>2× Monitor</li>
           <li>Microfoons voor set</li>
         </ul>
-        <p class="pa-price">€ 275</p>
+        <p class="pa-price">Op aanvraag</p>
       </div>
       <div class="pa-card reveal">
         <p class="watt">2×2.350 Watt · C-set</p>
@@ -292,7 +326,7 @@
           <li>2× 18″ Baskasten</li>
           <li>4× Monitor · Bediening incl.</li>
         </ul>
-        <p class="pa-price">€ 425</p>
+        <p class="pa-price">Op aanvraag</p>
       </div>
       <div class="pa-card reveal">
         <p class="watt">2×4.550 Watt · B-set</p>
@@ -303,7 +337,7 @@
           <li>2× 2×18″ Baskasten</li>
           <li>4× Monitor · Bediening incl.</li>
         </ul>
-        <p class="pa-price">€ 550</p>
+        <p class="pa-price">Op aanvraag</p>
       </div>
       <div class="pa-card reveal">
         <p class="watt">2×9.000 Watt · A-set</p>
@@ -314,7 +348,7 @@
           <li>4× 2×18″ Baskasten</li>
           <li>Bediening incl.</li>
         </ul>
-        <p class="pa-price">€ 800</p>
+        <p class="pa-price">Op aanvraag</p>
       </div>
       <div class="pa-card reveal">
         <p class="watt">2×18.000 Watt · A-set</p>
@@ -325,10 +359,10 @@
           <li>12× Monitor</li>
           <li>Bediening incl.</li>
         </ul>
-        <p class="pa-price">€ 1.500</p>
+        <p class="pa-price">Op aanvraag</p>
       </div>
     </div>
-    <p style="margin-top:2rem;color:var(--clr-muted);font-size:0.9rem;">Reiskosten: € 0,50 per km. Grotere installaties of meerdere dagen: op aanvraag.</p>
+    <p style="margin-top:2rem;color:var(--clr-muted);font-size:0.9rem;">Grotere installaties of meerdere dagen zijn mogelijk op aanvraag.</p>
   </section>
 
   <!-- Optreden / Clinics -->
@@ -387,6 +421,10 @@
       <!-- Facebook Page Plugin – shows latest posts (timeline tab) -->
       <div class="fb-embed-wrapper reveal" id="fb-embed-wrapper">
         <div class="fb-loading" id="fb-loading">Berichten laden…</div>
+        <p class="fb-fallback" id="fb-fallback" hidden>
+          De Facebook plugin kon niet laden. Bekijk de updates direct op
+          <a href="https://www.facebook.com/DeMadsWaalwijk/" target="_blank" rel="noopener noreferrer">Facebook</a>.
+        </p>
         <div
           class="fb-page"
           data-href="https://www.facebook.com/DeMadsWaalwijk/"
@@ -397,7 +435,6 @@
           data-adapt-container-width="true"
           data-hide-cover="false"
           data-show-facepile="false"
-          style="display:none"
         ></div>
       </div>
 
@@ -437,6 +474,53 @@
     </div>
   </section>
 
+  <!-- Instagram Posts -->
+  <section id="instagram" aria-labelledby="instagram-heading">
+    <p class="section-label reveal">Sociaal</p>
+    <h2 class="section-title reveal" id="instagram-heading">Instagram updates</h2>
+
+    <div class="ig-section-inner">
+      <div class="ig-embed-wrapper reveal" id="ig-embed-wrapper">
+        <div class="ig-loading" id="ig-loading">Instagram laden…</div>
+        <p class="ig-fallback" id="ig-fallback" hidden>
+          Instagram embed is nu niet beschikbaar. Bekijk de nieuwste posts direct op
+          <a href="https://www.instagram.com/demads.nl/" target="_blank" rel="noopener noreferrer">Instagram</a>.
+        </p>
+        <iframe
+          id="ig-frame"
+          title="Instagram feed De Mads"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          data-src="https://www.instagram.com/demads.nl/embed"
+        ></iframe>
+      </div>
+
+      <div class="ig-info-block reveal">
+        <div>
+          <p class="section-label" style="margin-bottom:0.5rem">Instagram</p>
+          <p style="color:var(--clr-muted);font-size:1rem;line-height:1.75;max-width:42ch">
+            Volg De Mads op Instagram voor foto’s en korte updates uit het muziekcafé, studio en van optredens.
+          </p>
+        </div>
+        <a
+          href="https://www.instagram.com/demads.nl/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="ig-follow-btn"
+          aria-label="Volg De Mads op Instagram (opent in nieuw tabblad)"
+        >
+          Volg ons op Instagram
+        </a>
+        <div>
+          <p class="section-label" style="margin-bottom:0.75rem">Laatste posts</p>
+          <p style="color:var(--clr-muted);font-size:0.95rem;line-height:1.7;max-width:42ch">
+            Als je browser embedded content blokkeert, kun je altijd direct naar ons profiel voor de nieuwste posts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section id="contact" aria-labelledby="contact-heading">
     <p class="section-label reveal">Bereikbaarheid</p>
@@ -465,6 +549,8 @@
           <span class="label">Socials</span>
           <span>
             <a href="https://nl-nl.facebook.com/DeMadsWaalwijk/" target="_blank" rel="noopener noreferrer" style="color:var(--clr-accent)">Facebook</a>
+            &nbsp;·&nbsp;
+            <a href="https://www.instagram.com/demads.nl/" target="_blank" rel="noopener noreferrer" style="color:var(--clr-accent)">Instagram</a>
             &nbsp;·&nbsp;
             <a href="https://www.youtube.com/user/demadswaalwijk/" target="_blank" rel="noopener noreferrer" style="color:var(--clr-accent)">YouTube</a>
           </span>
@@ -501,30 +587,22 @@
         <p>Muziek &amp; Danscentrum<br />Waalwijk · De Langstraat</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigatie">
-        <div class="footer-col">
-          <h4>Diensten</h4>
-          <a href="#studio">Studio</a>
-          <a href="#repeteren">Repeteren</a>
-          <a href="#verhuur">P.A. Verhuur</a>
-          <a href="#optreden">Optreden</a>
-        </div>
-        <div class="footer-col">
-          <h4>Bezoeken</h4>
-          <a href="#muziekcafe">MuziekCafé</a>
-          <a href="#feest">Feestje</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h4>Partners</h4>
-          <a href="http://www.musicscool.nl/" target="_blank" rel="noopener noreferrer">Music'scool</a>
-          <a href="http://www.edenanjo.nl/" target="_blank" rel="noopener noreferrer">Dansles Eden &amp; Jo</a>
-        </div>
+        <a href="#studio">Studio</a>
+        <a href="#repeteren">Repeteren</a>
+        <a href="#verhuur">P.A. Verhuur</a>
+        <a href="#optreden">Optreden</a>
+        <a href="#muziekcafe">MuziekCafé</a>
+        <a href="#feest">Feestje</a>
+        <a href="#contact">Contact</a>
+        <a href="http://www.musicscool.nl/" target="_blank" rel="noopener noreferrer">Music'scool</a>
+        <a href="http://www.edenanjo.nl/" target="_blank" rel="noopener noreferrer">Dansles Ed &amp; Anjo</a>
       </nav>
     </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> De Mads · Grotestraat 407, 5142 CB Waalwijk</span>
       <div class="social-links">
         <a href="https://nl-nl.facebook.com/DeMadsWaalwijk/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://www.instagram.com/demads.nl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
         <a href="https://www.youtube.com/user/demadswaalwijk/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YouTube</a>
       </div>
     </div>
