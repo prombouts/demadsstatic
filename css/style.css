@@ -28,6 +28,9 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 a { color: inherit; }
@@ -192,7 +195,7 @@ a { color: inherit; }
 }
 
 .nav-burger {
-  display: none !important;
+  display: none; /* shown in mobile styles */
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
@@ -207,6 +210,23 @@ a { color: inherit; }
   height: 2px;
   background: var(--clr-text);
   transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-burger:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+#main-nav.nav-open .nav-burger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+#main-nav.nav-open .nav-burger span:nth-child(2) {
+  opacity: 0;
+}
+
+#main-nav.nav-open .nav-burger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Hero */
@@ -426,10 +446,14 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
   cursor: pointer;
 }
 
-.btn:hover,
-.btn:focus-visible {
+.btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -484,6 +508,7 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 }
 
 .service-icon { font-size: 1.8rem; display: block; margin-bottom: 0.9rem; }
+.service-icon svg { width: 1.8rem; height: 1.8rem; display: block; }
 .service-card h3 { font-size: 1.2rem; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.03em; }
 .service-card p { color: var(--clr-muted); margin-top: 0.5rem; }
 
@@ -613,15 +638,24 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 
 .optreden-card { text-align: center; }
 .optreden-card .icon { display: block; font-size: 2.2rem; margin-bottom: 0.7rem; }
+.optreden-card .icon svg { width: 2.2rem; height: 2.2rem; display: block; }
 .optreden-card p { color: var(--clr-muted); }
 
 .feest-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  position: relative;
+  padding-left: 1.25rem;
 }
 
-.feest-item .bullet { color: var(--clr-accent); }
+.feest-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--clr-accent);
+}
 
 .hours-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
 .hours-table th { text-align: left; color: var(--clr-muted); font-size: 0.75rem; }
@@ -861,10 +895,59 @@ footer {
 }
 
 @media (max-width: 1080px) {
-  .nav-links {
+  .nav-burger {
     display: flex;
-    justify-content: flex-start;
+    margin-left: auto;
   }
+
+  .nav-links {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    background: rgba(15,23,24,0.98);
+    backdrop-filter: blur(18px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.75rem 1rem 1rem;
+    transform: translateY(-110%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s var(--ease), opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+    z-index: 99;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.95rem 0.75rem;
+    border-bottom: 1px solid rgba(243,246,244,0.08);
+    font-size: 1rem;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: var(--clr-text);
+    border-color: rgba(255,183,3,0.25);
+  }
+
+  #main-nav.nav-open .nav-links {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
   .hero-title { max-width: 11ch; }
 }
 
@@ -880,6 +963,54 @@ footer {
 
   .optreden-cards { grid-template-columns: 1fr; }
   .hero-scroll-hint { display: none; }
+}
+
+@media (max-width: 760px) {
+  section { padding: 3.5rem 1rem; }
+  #hero { padding: calc(var(--nav-h) + 2rem) 1rem 3.5rem; }
+  .hero-title { font-size: clamp(2.6rem, 12vw, 4.2rem); }
+  .hero-sub { max-width: 100%; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .quick-contact-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .rooms-grid { grid-template-columns: 1fr; }
+  .pa-grid { grid-template-columns: 1fr; }
+  .feest-list { grid-template-columns: 1fr; }
+  .footer-links { justify-content: center; }
+}
+
+@media (max-width: 620px) {
+  section { padding-top: 3rem; padding-bottom: 3rem; }
+  #hero { padding-bottom: 3rem; }
+  .btn { width: 100%; }
+  .footer-links { gap: 0.65rem; }
+  .footer-top { flex-direction: column; }
+  .nav-social { display: none; }
+}
+
+@media (hover: none) {
+  .btn:hover,
+  .service-card:hover,
+  .room-card:hover,
+  .pa-card:hover,
+  .optreden-card:hover,
+  .feest-item:hover,
+  .quick-contact-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .nav-links a,
+  .quick-contact-item,
+  .service-card,
+  .room-card,
+  .pa-card,
+  .optreden-card {
+    min-height: 44px;
+  }
 }
 
 @media (max-width: 620px) {
