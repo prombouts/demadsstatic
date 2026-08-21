@@ -474,7 +474,21 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 }
 
 /* Sections */
-#services, #verhuur, footer { background: var(--clr-surface); }
+#verhuur, footer { background: var(--clr-surface); }
+#verhuur {
+  background:
+    linear-gradient(116deg, rgba(21,34,36,0.97) 0%, rgba(21,34,36,0.9) 48%, rgba(21,34,36,0.62) 100%),
+    url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=1800&q=82') center/cover;
+  border-top: 1px solid rgba(255,183,3,0.2);
+  border-bottom: 1px solid rgba(255,183,3,0.2);
+}
+#services {
+  background:
+    linear-gradient(118deg, rgba(21,34,36,0.96) 0%, rgba(21,34,36,0.88) 54%, rgba(21,34,36,0.62) 100%),
+    url('https://images.unsplash.com/photo-1524650359799-842906ca1c06?auto=format&fit=crop&w=1800&q=82') center/cover;
+  border-top: 1px solid rgba(255,183,3,0.2);
+  border-bottom: 1px solid rgba(255,183,3,0.2);
+}
 #repeteren {
   background:
     linear-gradient(110deg, rgba(21,34,36,0.96) 0%, rgba(21,34,36,0.9) 52%, rgba(21,34,36,0.64) 100%),
@@ -507,7 +521,7 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 2.4rem;
 }
@@ -528,6 +542,7 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 
 .service-card {
   padding: 1.7rem;
+  background: rgba(27,44,47,0.88);
   transition: transform 0.25s var(--ease), border-color 0.25s;
 }
 
@@ -552,6 +567,49 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
   letter-spacing: 0.08em;
 }
 
+.service-signals {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.5rem;
+}
+
+.service-signals span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  line-height: 1.2;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(142,202,230,0.35);
+  border-radius: 999px;
+  color: var(--clr-accent2);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.service-signals strong { color: var(--clr-accent); font-size: 1rem; }
+
+.services-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.3rem;
+  border-top: 1px solid rgba(142,202,230,0.25);
+}
+
+.services-next span {
+  color: var(--clr-muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .studio-layout,
 .cafe-layout,
 .contact-layout,
@@ -574,18 +632,23 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 .feature-block h4 { font-size: 1rem; margin-bottom: 0.35rem; }
 .feature-block p { color: var(--clr-muted); font-size: 0.94rem; }
 
-.price-card { padding: 1.4rem; }
+.price-card { align-self: start; padding: 1.4rem; }
 
 .studio-intro { max-width: 62ch; }
 
 .studio-signals {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.55rem;
   margin-top: 1.5rem;
 }
 
 .studio-signals span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  line-height: 1.2;
   padding: 0.45rem 0.75rem;
   border: 1px solid rgba(255,183,3,0.42);
   border-radius: 999px;
@@ -648,6 +711,44 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 }
 
 .room-card { background: rgba(27,44,47,0.86); }
+.pa-card { background: rgba(27,44,47,0.9); }
+
+.pa-signals {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.5rem;
+}
+
+.pa-signals span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  line-height: 1.2;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(255,183,3,0.42);
+  border-radius: 999px;
+  color: var(--clr-accent);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.pa-signals strong { font-size: 1rem; }
+
+.pa-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.3rem;
+  border-top: 1px solid rgba(142,202,230,0.25);
+}
+
+.pa-next p { color: var(--clr-muted); font-size: 0.9rem; }
 
 .room-card:hover,
 .pa-card:hover,
@@ -686,12 +787,17 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 
 .room-signals {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.55rem;
   margin-top: 1.5rem;
 }
 
 .room-signals span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  line-height: 1.2;
   padding: 0.45rem 0.75rem;
   border: 1px solid rgba(142,202,230,0.35);
   border-radius: 999px;
@@ -1146,6 +1252,8 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
   .optreden-cards { grid-template-columns: 1fr; }
   .hero-scroll-hint { display: none; }
 }
@@ -1161,6 +1269,7 @@ footer {
   .studio-features { grid-template-columns: 1fr; }
   .rooms-grid { grid-template-columns: 1fr; }
   .pa-grid { grid-template-columns: 1fr; }
+  .pa-next { flex-direction: column; align-items: stretch; }
   .feest-list { grid-template-columns: 1fr; }
   .footer-links { justify-content: center; }
 }
