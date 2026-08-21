@@ -474,7 +474,14 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 }
 
 /* Sections */
-#services, #repeteren, #verhuur, #feest, footer { background: var(--clr-surface); }
+#services, #repeteren, #verhuur, footer { background: var(--clr-surface); }
+#feest {
+  background:
+    linear-gradient(180deg, rgba(15,23,24,0.62), rgba(15,23,24,0.84)),
+    url('https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+  border-top: 1px solid rgba(255,183,3,0.18);
+  border-bottom: 1px solid rgba(255,183,3,0.18);
+}
 #studio, #muziekcafe, #optreden, #facebook, #instagram, #contact { background: transparent; }
 
 .services-grid {
@@ -576,7 +583,7 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 .rooms-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .pa-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
 .optreden-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.feest-list { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.feest-list { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); position: relative; z-index: 1; }
 
 .room-card,
 .pa-card,
@@ -643,18 +650,47 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 
 .feest-item {
   position: relative;
-  padding-left: 1.25rem;
+  display: flex;
+  align-items: center;
+  min-height: 110px;
+  padding: 1.1rem 1.1rem 1.1rem 3.2rem;
+  background:
+    linear-gradient(135deg, rgba(16,22,23,0.76), rgba(21,34,36,0.84)),
+    url('https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+  border: 1px solid rgba(255,183,3,0.26);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 18px 28px rgba(0,0,0,0.13);
+  color: var(--clr-text);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  overflow: hidden;
 }
 
 .feest-item::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0.7rem;
-  width: 0.35rem;
-  height: 0.35rem;
-  border-radius: 999px;
-  background: var(--clr-accent);
+  left: 1rem;
+  top: 50%;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--clr-accent), #ffd166);
+  box-shadow: 0 0 0 5px rgba(255,183,3,0.14);
+}
+
+.feest-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,183,3,0.14), transparent 55%, rgba(142,202,230,0.08));
+  pointer-events: none;
+}
+
+.feest-item:hover {
+  border-color: rgba(255,183,3,0.52);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 22px 32px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, rgba(34,52,55,0.98), rgba(19,31,31,0.92));
 }
 
 .hours-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
@@ -796,32 +832,9 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 .contact-row a:hover,
 .contact-row a:focus-visible { color: var(--clr-accent); }
 
-.contact-form {
-  padding: 1.2rem;
-  display: grid;
-  gap: 0.85rem;
-}
-
-.form-group { display: grid; gap: 0.3rem; }
-
-.form-group label {
-  font-size: 0.82rem;
-  color: var(--clr-muted);
-}
-
-.form-group input,
-.form-group textarea {
-  background: rgba(15,23,24,0.7);
-  color: var(--clr-text);
-  border: 1px solid var(--clr-border);
-  border-radius: 10px;
-  font-family: inherit;
-  padding: 0.75rem 0.85rem;
-}
-
-.form-group textarea {
-  min-height: 130px;
-  resize: vertical;
+.contact-layout {
+  max-width: 820px;
+  margin-top: 2rem;
 }
 
 footer {

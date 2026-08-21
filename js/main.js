@@ -49,15 +49,6 @@ window.addEventListener('resize', () => {
 // Keep top navigation visible so internal section links stay discoverable.
 mainNav.classList.remove('nav-hidden');
 
-// ── Contact form (demo submit) ────────────────────────
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('[type=submit]');
-  btn.textContent = 'Verstuurd ✓';
-  btn.disabled = true;
-  btn.style.opacity = '0.7';
-}
-
 // ── Facebook SDK: lazy-load when section scrolls into view ──
 (function () {
   var fbLoaded = false;
