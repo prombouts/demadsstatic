@@ -183,6 +183,21 @@ mainNav.classList.remove('nav-hidden');
       return;
     }
 
+    var parsedSrc;
+    try {
+      parsedSrc = new URL(src, window.location.href);
+    } catch (e) {
+      setInstagramFallback('Instagram embed bron is ongeldig.');
+      return;
+    }
+
+    var isAllowedProtocol = parsedSrc.protocol === 'https:' || parsedSrc.protocol === 'http:';
+    var isAllowedHost = parsedSrc.hostname === 'www.instagram.com' || parsedSrc.hostname === 'instagram.com';
+    if (!isAllowedProtocol || !isAllowedHost) {
+      setInstagramFallback('Instagram embed bron is niet toegestaan.');
+      return;
+    }
+
     var loaded = false;
     var timeoutId = window.setTimeout(function () {
       if (!loaded) {
@@ -202,7 +217,7 @@ mainNav.classList.remove('nav-hidden');
       setInstagramFallback('Instagram embed kon niet geladen worden in deze browser.');
     }, { once: true });
 
-    frame.src = src;
+    frame.src = parsedSrc.toString();
   }
 
   var target = document.getElementById('ig-embed-wrapper');
