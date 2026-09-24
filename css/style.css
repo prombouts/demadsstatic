@@ -473,6 +473,43 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
   border-color: rgba(142,202,230,0.45);
 }
 
+.section-call {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  margin-top: 2.5rem;
+  color: var(--clr-accent2);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(142,202,230,0.45);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.section-call:hover,
+.section-call:focus-visible {
+  color: var(--clr-accent);
+  border-color: var(--clr-accent);
+}
+
+.section-call:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 4px;
+}
+
+.section-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.35rem;
+  margin-top: 2.5rem;
+}
+
+.section-actions .section-call { margin-top: 0; }
+
 /* Sections */
 #verhuur, footer { background: var(--clr-surface); }
 #verhuur {
@@ -1082,7 +1119,13 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
   text-transform: uppercase;
 }
 
-.service-signals strong { color: var(--clr-accent); font-size: 1rem; }
+.service-signals strong,
+.pa-signals strong,
+.room-signals strong {
+  color: var(--clr-accent);
+  font-size: 1rem;
+  margin-right: 0.25rem;
+}
 
 .services-next {
   display: flex;
@@ -1228,8 +1271,6 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
   text-transform: uppercase;
 }
 
-.pa-signals strong { font-size: 1rem; }
-
 .pa-next {
   display: flex;
   align-items: center;
@@ -1300,8 +1341,6 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
   text-transform: uppercase;
 }
 
-.room-signals strong { color: var(--clr-accent); font-size: 1rem; }
-
 .room-cta { margin-top: 1.5rem; }
 
 .pa-card .watt {
@@ -1323,6 +1362,59 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 .optreden-card .icon { display: block; font-size: 2.2rem; margin-bottom: 0.7rem; }
 .optreden-card .icon svg { width: 2.2rem; height: 2.2rem; display: block; }
 .optreden-card p { color: var(--clr-muted); }
+
+.venue-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2.4rem;
+  border-top: 1px solid rgba(142,202,230,0.35);
+  border-bottom: 1px solid rgba(142,202,230,0.35);
+}
+
+.venue-specs > div { padding: 1.25rem 0; }
+
+.venue-specs > div + div {
+  padding-left: 2rem;
+  border-left: 1px solid rgba(243,246,244,0.14);
+}
+
+.venue-spec-label {
+  display: block;
+  color: var(--clr-accent2);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.venue-specs strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.venue-specs p {
+  margin-top: 0.35rem;
+  color: var(--clr-muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 680px) {
+  .venue-specs {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .venue-specs > div + div {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid rgba(243,246,244,0.14);
+  }
+}
 
 .feest-item {
   position: relative;
@@ -1809,6 +1901,19 @@ footer {
   .btn { width: 100%; }
   .footer-links { gap: 0.7rem; }
   .footer-top { flex-direction: column; }
+
+  .fb-embed-wrapper,
+  .fb-embed-wrapper > span,
+  .fb-embed-wrapper iframe {
+    height: 420px !important;
+    min-height: 420px !important;
+  }
+
+  .ig-embed-wrapper,
+  #ig-frame {
+    height: 440px;
+    min-height: 440px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
