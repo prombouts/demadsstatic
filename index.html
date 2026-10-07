@@ -630,10 +630,22 @@
         </div>
       </div>
 
-      <div class="contact-map reveal">
-        <p class="contact-map-label">Bekijk De Mads van binnen</p>
-        <p class="contact-map-copy">Stap alvast binnen met onze interactieve Street View.</p>
-        <a class="contact-map-link" href="https://www.google.com/maps/@51.6915717,5.0789184,0a,36.4y,318.16h,85.69t/data=!3m4!1e1!3m2!1sCIHM0ogKEICAgICujYq_YA!2e10?source=apiv3" target="_blank" rel="noopener noreferrer">Open Street View in Google Maps</a>
+      <div class="contact-visual">
+        <div class="contact-map-embed reveal">
+          <iframe
+            title="Kaart met de locatie van De Mads, Grotestraat 407 Waalwijk"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Grotestraat+407,+5142+CB+Waalwijk&amp;hl=nl&amp;z=15&amp;output=embed"
+          ></iframe>
+          <a class="contact-route-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Grotestraat+407,+5142+CB+Waalwijk" target="_blank" rel="noopener noreferrer">Plan je route</a>
+        </div>
+
+        <div class="contact-map reveal">
+          <p class="contact-map-label">Bekijk De Mads van binnen</p>
+          <p class="contact-map-copy">Stap alvast binnen met onze interactieve Street View.</p>
+          <a class="contact-map-link" href="https://www.google.com/maps/@51.6915717,5.0789184,0a,36.4y,318.16h,85.69t/data=!3m4!1e1!3m2!1sCIHM0ogKEICAgICujYq_YA!2e10?source=apiv3" target="_blank" rel="noopener noreferrer">Open Street View in Google Maps</a>
+        </div>
       </div>
 
     </div>
@@ -678,35 +690,5 @@
 
   <!-- Site JavaScript -->
   <script src="js/main.js" defer></script>
-  <script>
-      /*
-        function myMap() {
-            infoWindow = new google.maps.InfoWindow();
-            var windowLatLng = new google.maps.LatLng(51.691531, 5.078888);
-
-            infoWindow.setOptions({
-                content: "<h3>De Mads</h3><div class='google-maps-text-item'><b>Straat:</b> Grotestraat 407 <br/><b>Plaats:</b> 5142 CB, Waalwijk <br/><b>Telefoon:</b> 06-12345678 <br/><b>E-mail: </b>kantoor@demads.nl</div>",
-                position: windowLatLng
-            });
-
-
-            map = new google.maps.Map(document.getElementById('google-maps-content'), {
-                center: {lat: 51.691531, lng: 5.078888},
-                zoom: 14,
-                styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#cdd9f0"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":20},{"visibility":"on"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#1d1d1d"}]},{"featureType":"landscape","elementType":"geometry.stroke","stylers":[{"color":"#888585"},{"weight":"1.00"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffcd11"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#eb9132"},{"lightness":"0"},{"weight":"1.00"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"color":"#fef6f6"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"lightness":18},{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#fcaa27"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#363023"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#f9eeee"}]},{"featureType":"road.arterial","elementType":"labels.text.stroke","stylers":[{"weight":"2.93"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"lightness":16}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#63646d"}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"labels.text.fill","stylers":[{"color":"#fffefe"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#124469"},{"lightness":17}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#bfcae5"}]}],
-                scrollwheel: false
-            });
-
-            var marker = new google.maps.Marker({
-                position: windowLatLng,
-                map: map,
-                title: 'Uluru (Ayers Rock)'
-            });
-
-            infoWindow.open(map, marker);
-        }
-        */
-    </script>
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiJjelYb31qgWPRH9x0qJdCoSmRrSuC5k&callback=myMap" type="text/javascript"></script> -->
 </body>
 </html>

@@ -1663,6 +1663,50 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
   margin-top: 2rem;
 }
 
+.contact-visual {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.contact-map-embed {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  min-height: 280px;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  background: var(--clr-card);
+}
+
+.contact-map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: invert(92%) hue-rotate(180deg) saturate(0.7) brightness(0.95);
+}
+
+.contact-route-link {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--clr-accent);
+  color: var(--clr-strong);
+  border-radius: 999px;
+  font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.contact-route-link:hover,
+.contact-route-link:focus-visible { color: var(--clr-strong); opacity: 0.88; }
+
 .contact-map {
   width: 100%;
   overflow: hidden;
