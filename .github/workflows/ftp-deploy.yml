@@ -1,0 +1,82 @@
+name: Deploy static site to FTP (disabled)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ftp-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Upload website
+    # Change to true after configuring the FTP variables and secrets.
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate FTP settings
+        env:
+          FTP_SERVER: ${{ vars.FTP_SERVER }}
+          FTP_PORT: ${{ vars.FTP_PORT || '21' }}
+          FTP_PROTOCOL: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          FTP_SERVER_DIR: ${{ vars.FTP_SERVER_DIR }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          set -eu
+
+          for setting in FTP_SERVER FTP_SERVER_DIR FTP_USERNAME FTP_PASSWORD; do
+            if [ -z "$(printenv "$setting")" ]; then
+              echo "::error::Configure $setting in GitHub Actions before deploying."
+              exit 1
+            fi
+          done
+
+          case "$FTP_PROTOCOL" in
+            ftp|ftps|ftps-legacy) ;;
+            *)
+              echo "::error::FTP_PROTOCOL must be ftp, ftps, or ftps-legacy."
+              exit 1
+              ;;
+          esac
+
+          case "$FTP_PORT" in
+            ''|*[!0-9]*)
+              echo "::error::FTP_PORT must be a numeric port."
+              exit 1
+              ;;
+          esac
+
+          case "$FTP_SERVER_DIR" in
+            */) ;;
+            *)
+              echo "::error::FTP_SERVER_DIR must end with a slash, for example public_html/."
+              exit 1
+              ;;
+          esac
+
+      - name: Deploy website files
+        uses: SamKirkland/FTP-Deploy-Action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
+        with:
+          server: ${{ vars.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ vars.FTP_PORT || '21' }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          local-dir: ./
+          server-dir: ${{ vars.FTP_SERVER_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.github/**
+            /.gitignore
+            /.gitattributes
+            /PRODUCT.md
+            /DESIGN.md
