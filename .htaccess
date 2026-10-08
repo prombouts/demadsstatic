@@ -1,0 +1,10 @@
+# Enable Apache's per-directory rewrite rules.
+RewriteEngine On
+
+# Serve index.html for requests to a directory, including the site root.
+DirectoryIndex index.html
+
+# Redirect HTTP requests and non-canonical hostnames to the HTTPS www hostname.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.demads\.nl$ [NC]
+RewriteRule ^ https://www.demads.nl%{REQUEST_URI} [R=301,L]
