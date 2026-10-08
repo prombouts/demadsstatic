@@ -1743,6 +1743,33 @@ section { scroll-margin-top: calc(var(--nav-h) + 1rem); }
 .contact-map-link:hover,
 .contact-map-link:focus-visible { color: var(--clr-strong); opacity: 0.88; }
 
+@media (min-width: 961px) {
+  .contact-layout .contact-visual {
+    align-self: stretch;
+    grid-template-rows: minmax(260px, 1fr) auto;
+  }
+
+  .contact-map-embed {
+    aspect-ratio: auto;
+    min-height: 260px;
+  }
+
+  .contact-visual .contact-map {
+    aspect-ratio: auto;
+    min-height: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .contact-visual .contact-map-label { flex-basis: 100%; }
+  .contact-visual .contact-map-copy { flex: 1 1 18ch; margin-top: 0; font-size: 1.5rem; }
+  .contact-visual .contact-map-link { margin-top: 0; align-self: flex-end; }
+}
+
 footer {
   border-top: 1px solid var(--clr-border);
   padding: 2.5rem clamp(1.25rem, 7vw, 7rem);
