@@ -1,4 +1,4 @@
-name: Deploy static site to FTP (disabled)
+name: Deploy static site to FTP
 
 on:
   # Runs on pushes targeting the default branch
