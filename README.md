@@ -10,6 +10,7 @@ static website files that are deployed to De Mads' web server.
 - `js/` contains the browser-side JavaScript.
 - `images/` contains website images.
 - `robots.txt` provides crawler guidance.
+- `sitemap.xml` lists the canonical public URL for search engines.
 
 There is no build step or package installation required. To preview changes,
 serve the repository with a local web server and open the local address in a
